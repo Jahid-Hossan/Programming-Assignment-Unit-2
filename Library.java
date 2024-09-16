@@ -27,6 +27,39 @@ class Library {
 
     }
 
+    public void borrowBook(String title, int quantity) {
+
+        if (books.containsKey(title)) {
+
+            Book book = books.get(title);
+            if (book.getQuantity() >= quantity) {
+                book.decreseQuantity(quantity);
+                System.out.println("You've borrowed " + quantity + " copies of '" + title + "'.");
+            } else {
+                System.out.println("Error: Not enough copies available to borrow.");
+            }
+
+        } else {
+            System.out.println("Error: Book not available in the library.");
+        }
+    }
+
+    public void returnBook(String title, int quantity) {
+        if (books.containsKey(title)) {
+
+            books.get(title).increseQuantity(quantity);
+            System.out.println("You have successfully returned " + quantity + " copies of '" + title + "'.");
+
+        } else {
+            System.out.println("Error: This book does not belong to the library.");
+        }
+    }
+
+    public void exit() {
+        System.out.println("Exiting the system. Goodbye!");
+        System.exit(0);
+    }
+
 }
 
 class Book {
