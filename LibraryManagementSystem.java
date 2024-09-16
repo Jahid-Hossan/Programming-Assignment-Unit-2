@@ -86,3 +86,32 @@ class Book {
         quantity -= amount;
     }
 }
+
+public class LibraryManagementSystem {
+
+    public static void main(String[] args) {
+
+        Library library = new Library();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nLibrary Management System");
+            System.out.println("1. Add Books");
+            System.out.println("2. Borrow Books");
+            System.out.println("3. Return Books");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice;
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                continue;
+            }
+
+        }
+
+    }
+
+}
