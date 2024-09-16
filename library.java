@@ -1,6 +1,0 @@
-/**
- * library
- */
-public class library {
-
-}
