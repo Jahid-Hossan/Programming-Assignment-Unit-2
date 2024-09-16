@@ -15,6 +15,18 @@ class Library {
         books = new HashMap<>();
     }
 
+    public void addBook(String title, String author, int quantity) {
+
+        if (books.containsKey(title)) {
+            books.get(title).increseQuantity(quantity);
+            System.err.println("You've successfully updated the quantity of existing book");
+        } else {
+            books.put(title, new Book(title, author, quantity));
+            System.out.println("You've added new book to the Library");
+        }
+
+    }
+
 }
 
 class Book {
