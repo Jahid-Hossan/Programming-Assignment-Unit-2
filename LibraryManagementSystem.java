@@ -110,6 +110,57 @@ public class LibraryManagementSystem {
                 continue;
             }
 
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter book title: ");
+                    String title = scanner.nextLine();
+                    System.out.println("Enter author: ");
+                    String author = scanner.nextLine();
+                    System.out.println("Enter quantity: ");
+                    int quantity;
+                    try {
+                        quantity = Integer.parseInt(scanner.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid quantity. Please enter a number.");
+                        break;
+                    }
+                    library.addBook(title, author, quantity);
+                    break;
+
+                case 2:
+                    System.out.println("Enter book title: ");
+                    title = scanner.nextLine();
+                    System.out.println("Enter borrow quantity: ");
+                    try {
+                        quantity = Integer.parseInt(scanner.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid quantity. Please enter a number.");
+                        break;
+                    }
+                    library.borrowBook(title, quantity);
+                    break;
+
+                case 3:
+                    System.out.println("Enter book title: ");
+                    title = scanner.nextLine();
+                    System.out.println("Enter borrow quantity: ");
+                    try {
+                        quantity = Integer.parseInt(scanner.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid quantity. Please enter a number.");
+                        break;
+                    }
+                    library.returnBook(title, quantity);
+                    break;
+
+                case 4:
+                    library.exit();
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please choose a number between 1 and 4.");
+            }
+
         }
 
     }
